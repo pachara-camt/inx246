@@ -33,7 +33,7 @@ class Vehicle implements Runnable, ShowInfo
     function runFor($km)
     {
         if(!$this->isEngineOn) {
-            fprintf(STDERR, "Cannot run, engine is off\n");
+            fprintf(STDERR, "Cannot run, engine is off!!!\n");
             return false;
         }
         
@@ -44,7 +44,7 @@ class Vehicle implements Runnable, ShowInfo
     function showInfo()
     {
         if($this->isEngineOn) {
-            fprintf(STDERR, "Cannot show, engine is on\n");
+            fprintf(STDERR, "Cannot show, engine is on!!!\n");
             return false;
         }
         
@@ -55,8 +55,8 @@ class Vehicle implements Runnable, ShowInfo
     function showLongInfo()
     {
         if($this->showInfo()) {
-            printf("Running distance: %6d km\n",
-                $this->distance);
+            printf("Running distance:    %10s km\n",
+                number_format($this->distance, 0));
         } else {
             return false;
         }

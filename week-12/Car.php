@@ -24,8 +24,8 @@ class Car extends Vehicle
     function showLongInfo()
     {
         if(parent::showLongInfo()) {
-            printf("Fuel used:        %6.2f L\n",
-                $this->fuelUsed());
+            printf("Fuel used:           %10s L\n",
+                number_format($this->fuelUsed(), 2));
         } else {
             return false;
         }
