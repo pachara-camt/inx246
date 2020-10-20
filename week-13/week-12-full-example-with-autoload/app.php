@@ -1,32 +1,33 @@
 <?php
-require_once 'classes/autoload.php';
+require_once './classes/autoload.php';
 
 function runAllFor($list, $km) {
-	foreach($list as $item) {
-		// to make sure $item has runFor method
-		if($item instanceof Runnable) {
-			$item->runFor($km);
-		}
-	}
+    foreach($list as $item) {
+        // to make sure $item has runFor method
+        if($item instanceof Runnable) {
+            $item->runFor($km);
+        }
+    }
 }
 
 function showAllInfo($list) {
-	foreach($list as $item) {
-		// if $item is an instance of ShowInfo
-		// call showLongInfo();
-		if($item instanceof ShowInfo) {
-			$item->showLongInfo();
-		}
-		// if $item is an instance of Runnable
-		// show runningDistance;
-		else if($item instanceof Runnable) {
-			echo "{$item->runningDistance()}\n";
-		}
-		// other case print unknow information
-		else {
-			echo "Unknown information.\n";
-		}
-	}
+    foreach($list as $item) {
+        // if $item is an instance of ShowInfo
+        // call showLongInfo();
+        if($item instanceof ShowInfo) {
+            $item->showLongInfo();
+        }
+        // if $item is an instance of Runnable
+        // show runningDistance;
+        else if($item instanceof Runnable) {
+            printf("Distance: %d\n", $item->runningDistance());
+        }
+        // other case print unknow information
+        else {
+            printf("Unknown information.\n");
+        }
+        printf("%s\n", str_repeat('-', 40));
+    }
 }
 
 $car = new Car('Adam', 1800);
@@ -40,6 +41,7 @@ $superCar->engineStart();
 $runningList = [$car, $superCar, $person, $lazyPerson];
 
 runAllFor($runningList, 20);
+printf("%s\n", str_repeat('=', 40));
 
 $car->engineStop();
 $superCar->engineStop();
