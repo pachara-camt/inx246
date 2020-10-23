@@ -1,5 +1,5 @@
 <?php
-require_once './Car.php';
+require_once __DIR__ . '/Car.php';
 
 class SuperCar extends Car
 {

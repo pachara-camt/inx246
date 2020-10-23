@@ -1,8 +1,8 @@
 <?php
-require_once './Car.php';
-require_once './SuperCar.php';
-require_once './Person.php';
-require_once './LazyPerson.php';
+require_once __DIR__ . '/Car.php';
+require_once __DIR__ . '/SuperCar.php';
+require_once __DIR__ . '/Person.php';
+require_once __DIR__ . '/LazyPerson.php';
 
 function runAllFor($list, $km) {
     foreach($list as $item) {

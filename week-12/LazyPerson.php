@@ -1,6 +1,6 @@
 <?php
-require_once './ShowInfo.php';
-require_once './Person.php';
+require_once __DIR__ . '/ShowInfo.php';
+require_once __DIR__ . '/Person.php';
 
 class LazyPerson extends Person implements ShowInfo
 {

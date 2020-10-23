@@ -1,5 +1,5 @@
 <?php
-require_once './Runnable.php';
+require_once __DIR__ . '/Runnable.php';
 
 class Person implements Runnable
 {
