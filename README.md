@@ -1,2 +1,2 @@
 # INX246
-Example code for studetns.
+Example code for students.
